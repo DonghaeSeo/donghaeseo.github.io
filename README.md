@@ -20,7 +20,8 @@ Then visit <http://127.0.0.1:8000>.
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Keep the profile markup consistent across all three pages.
-- `styles.css` controls appearance; `profile.js` controls the name pronunciation note.
+- `styles.css` controls appearance; `profile.js` controls the name pronunciation note and email disclosure.
+- Update the institutional email in `profile.js` and the `<noscript>` fallback in all three pages when it changes.
 - `analytics.js` loads Google Analytics only after a visitor allows analytics.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.

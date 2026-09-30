@@ -40,6 +40,15 @@ h1, h2, h3, h4 { color: var(--ink); }
 .profile-links { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--rule); width: 155px; font-size: 12px; }
 .profile-links a { text-decoration: none; }
 .profile-links a:hover { text-decoration: underline; }
+.email-disclosure { position: relative; }
+.email-trigger { display: block; color: var(--link); list-style: none; cursor: pointer; }
+.email-trigger::-webkit-details-marker { display: none; }
+.email-trigger::marker { content: ""; }
+.email-trigger:hover { text-decoration: underline; text-underline-offset: 3px; }
+.email-trigger:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; }
+.email-note { position: absolute; top: 100%; left: 0; z-index: 2; width: max-content; max-width: calc(100vw - 48px); padding: 10px 12px; border: 1px solid var(--rule); border-radius: 3px; background: #fff; box-shadow: 0 4px 14px #26333d12; }
+.email-address { overflow-wrap: anywhere; }
+.email-address[hidden] { display: none; }
 .content-column { min-width: 0; }
 h1 { font: 400 31px/1.25 var(--serif); letter-spacing: -.025em; margin: 0 0 24px; }
 .introduction h1 { font: 600 14px/1.5 var(--sans); margin: 1px 0 20px; }
@@ -102,8 +111,8 @@ button:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   .institution { font-size: 12px; }
   .site-nav { flex-direction: row; flex-wrap: wrap; gap: 6px 20px; margin-top: 16px; font-size: 13px; }
   .site-nav a { padding-block: 4px; }
-  .profile-links { flex-direction: row; gap: 22px; border: 0; padding: 0; margin-top: 13px; width: auto; font-size: 13px; }
-  .profile-links a { padding-block: 4px; }
+  .profile-links { flex-direction: row; flex-wrap: wrap; gap: 6px 22px; border: 0; padding: 0; margin-top: 13px; width: auto; font-size: 13px; }
+  .profile-links a, .email-trigger { padding-block: 4px; }
   .lead { font-size: 21px; line-height: 1.55; }
   .introduction h1 { margin-bottom: 16px; }
   .news-section, .research-section { margin-top: 30px; }
