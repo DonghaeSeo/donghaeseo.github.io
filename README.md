@@ -21,7 +21,7 @@ Then visit <http://127.0.0.1:8000>.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Keep the profile markup consistent across all three pages.
 - `styles.css` controls appearance; `profile.js` controls the name pronunciation note.
-- `analytics.js` remains inactive until a GA4 measurement ID is configured.
+- `analytics.js` loads Google Analytics only after a visitor allows analytics.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.

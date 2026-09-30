@@ -1,8 +1,8 @@
 (() => {
   "use strict";
 
-  // Add the GA4 web stream's measurement ID here when it is available.
-  const measurementId = "";
+  // GA4 web stream for the public academic website.
+  const measurementId = "G-DH060W1ZBT";
   const productionHost = "donghaeseo.github.io";
 
   // Never load Google Analytics for an unconfigured site or a local preview.
