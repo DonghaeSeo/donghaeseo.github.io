@@ -19,6 +19,7 @@ Then visit <http://127.0.0.1:8000>.
 
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
+- Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
 - `styles.css` controls appearance; `profile.js` controls the name pronunciation note and email disclosure.
 - Update the institutional email in `profile.js` and the `<noscript>` fallback in all three pages when it changes.
