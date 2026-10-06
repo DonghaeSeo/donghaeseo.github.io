@@ -18,6 +18,7 @@ Then visit <http://127.0.0.1:8000>.
 ## Update
 
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
+- Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
