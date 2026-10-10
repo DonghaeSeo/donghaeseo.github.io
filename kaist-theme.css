@@ -22,8 +22,6 @@ a:hover { color: var(--theme-hover); transition: color 180ms ease, text-decorati
 .research-project p { font-size: 16px; line-height: 1.65; }
 .research-papers a { font-size: 15px; line-height: 1.55; }
 .paper-meta { font-size: 12px; }
-.publication-list h4 { font: 600 17px/1.45 var(--serif); }
-.publication-list p { font-size: 15px; line-height: 1.6; }
 .authors strong { font-weight: 600; }
 .affiliation-history { min-width: 0; }
 .affiliation-summary { display: none; }
