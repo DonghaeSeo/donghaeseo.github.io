@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Donghae Seo is a theoretical physicist at KAIST studying topological phases, anyon superconductivity, and constraints on quantum simulation.">
+  <meta name="description" content="Donghae Seo is a theoretical physicist at KAIST studying topological phases of matter and the physical consequences of anyon statistics.">
   <title>Donghae Seo</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css?v=9">
-  <script defer src="analytics.js"></script>
+  <script src="themes.js?v=7"></script>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="kaist-theme.css?v=9">
+  <script defer src="motion.js"></script>
+  <script defer src="analytics.js?v=3"></script>
   <script defer src="profile.js"></script>
 </head>
 <body>
@@ -24,8 +27,44 @@
               <p class="name-pronunciation">Donghae <span>“dong-heh”</span><br>Seo <span>“suh”</span></p>
             </div>
           </details>
-          <p class="position">Postdoctoral Researcher</p>
-          <p class="institution">Natural Science Research Institute<br>KAIST, Daejeon</p>
+          <details class="affiliation-history" open>
+            <summary class="affiliation-summary">
+              <span class="affiliation-current">
+                <img src="assets/kaist-emblem.gif" alt="" width="32" height="32">
+                <span class="affiliation-current-label"><span class="affiliation-current-school">KAIST, Daejeon</span><span class="affiliation-current-title">Postdoctoral Researcher</span></span>
+              </span>
+              <span class="affiliation-summary-heading">Affiliations</span>
+              <span class="affiliation-more"><span class="affiliation-more-label">More</span><span class="affiliation-less-label">Less</span></span>
+            </summary>
+            <ol class="affiliations" aria-label="Affiliation timeline: select a color theme">
+              <li>
+                <span class="affiliation-choice current-affiliation">
+                  <span class="affiliation-badge"><img class="affiliation-emblem" src="assets/kaist-emblem.gif" alt="" width="34" height="34"></span>
+                  <span class="affiliation-label">
+                    <span class="affiliation-school">KAIST, Daejeon</span>
+                    <span class="affiliation-unit">Natural Science Research Institute</span>
+                    <span class="affiliation-positions">
+                      <span class="affiliation-position"><span class="affiliation-title">Postdoctoral Researcher</span><span class="affiliation-period">Sep 2026–present</span></span>
+                    </span>
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span class="affiliation-choice former-affiliation">
+                  <span class="affiliation-badge"><img class="affiliation-emblem" src="assets/postech-emblem.png" alt="" width="34" height="34"></span>
+                  <span class="affiliation-label">
+                    <span class="affiliation-school">POSTECH, Pohang</span>
+                    <span class="affiliation-unit">Department of Physics</span>
+                    <span class="affiliation-positions">
+                      <span class="affiliation-position"><span class="affiliation-title">PhD in Physics</span><span class="affiliation-period">Mar 2021–Aug 2026</span></span>
+                      <span class="affiliation-position"><span class="affiliation-title">BS in Physics</span><span class="affiliation-period">Mar 2017–Feb 2021</span></span>
+                    </span>
+                  </span>
+                </span>
+              </li>
+            </ol>
+          </details>
+          <span class="theme-status" role="status" aria-live="polite"></span>
         </div>
       </div>
       <nav class="site-nav" aria-label="Main navigation">
@@ -49,7 +88,7 @@
     <div class="content-column">
       <main id="main">
         <div class="introduction">
-          <p class="lead">I study topological phases of matter, focusing on anyons, quantum Hall physics, and superconductivity.</p>
+          <p class="lead">I study topological phases of matter and the physical consequences of anyon statistics.</p>
         </div>
 
         <section id="news" class="news-section" aria-labelledby="news-heading">
@@ -130,7 +169,6 @@
           </article>
         </section>
       </main>
-      <footer>Last updated October 2026</footer>
     </div>
   </div>
 </body>

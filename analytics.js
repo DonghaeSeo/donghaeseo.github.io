@@ -1,43 +1,67 @@
 (() => {
   "use strict";
 
-  // GA4 web stream for the public academic website.
+  // All storage/advertising consent stays denied. This uses
+  // Google's cookieless consent-mode signals, not ordinary cookie-based GA4.
+  // https://developers.google.com/tag-platform/security/guides/consent
+  if (window.__visitMeasurementLoaded) return;
+  window.__visitMeasurementLoaded = true;
+
   const measurementId = "G-DH060W1ZBT";
   const productionHost = "donghaeseo.github.io";
-
-  // Never load Google Analytics for an unconfigured site or a local preview.
-  if (!/^G-[A-Z0-9]+$/.test(measurementId) ||
-      location.protocol !== "https:" || location.hostname !== productionHost) return;
-
-  const storageKey = "analytics-consent-v1";
-  const consentLifetime = 180 * 24 * 60 * 60 * 1000;
+  const production = /^G-[A-Z0-9]+$/.test(measurementId) &&
+    location.protocol === "https:" && location.hostname === productionHost;
+  const preferenceKey = "analytics-measurement-v2";
+  const legacyKey = "analytics-consent-v1";
+  const disableKey = "ga-disable-" + measurementId;
+  const browserOptOut = navigator.globalPrivacyControl === true ||
+    [navigator.doNotTrack, window.doNotTrack, navigator.msDoNotTrack]
+      .some(value => value === "1" || value === "yes");
   let started = false;
+  let optedOut = readPreference();
 
-  function readChoice() {
+  // The v2 preference only controls cookieless measurement. It never grants
+  // cookie consent, including when a visitor previously allowed analytics.
+  function readPreference() {
     try {
-      const saved = JSON.parse(localStorage.getItem(storageKey));
-      if (saved && saved.expires > Date.now() && typeof saved.allowed === "boolean") {
-        return saved.allowed;
+      const saved = JSON.parse(localStorage.getItem(preferenceKey));
+      if (saved && saved.expires > Date.now() && typeof saved.disabled === "boolean") {
+        return saved.disabled;
       }
-    } catch (_) { /* Storage may be unavailable in private browsing. */ }
-    return null;
+      const legacy = JSON.parse(localStorage.getItem(legacyKey));
+      return Boolean(legacy && legacy.expires > Date.now() && legacy.allowed === false);
+    } catch (_) {
+      // Do not lose an earlier opt-out if preference storage cannot be read.
+      return true;
+    }
   }
 
-  function saveChoice(allowed) {
+  function clearLegacyCookies() {
+    if (!production) return;
     try {
-      localStorage.setItem(storageKey, JSON.stringify({
-        allowed, expires: Date.now() + consentLifetime
-      }));
-      return true;
-    } catch (_) { return false; }
+      for (const cookie of document.cookie.split(";")) {
+        const name = cookie.trim().split("=")[0];
+        if (name === "_ga" || name.startsWith("_ga_")) {
+          const expired = name + "=; Max-Age=0; Path=/; SameSite=Lax; Secure";
+          document.cookie = expired;
+          document.cookie = expired + "; Domain=" + productionHost;
+        }
+      }
+    } catch (_) { /* Cookies may be inaccessible in a restricted browser. */ }
+  }
+
+  function referrerOrigin() {
+    try {
+      const source = new URL(document.referrer);
+      return source.protocol === "https:" || source.protocol === "http:" ? source.origin : "";
+    } catch (_) { return ""; }
   }
 
   function startAnalytics() {
-    window["ga-disable-" + measurementId] = false;
-    if (started) {
-      window.gtag("consent", "update", { analytics_storage: "granted" });
-      return;
-    }
+    // Preview hosts must never load GA, including after a storage event.
+    if (!production || browserOptOut || optedOut) return;
+    window[disableKey] = false;
+    if (started) return;
     started = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
@@ -47,88 +71,35 @@
       ad_user_data: "denied",
       ad_personalization: "denied"
     });
-    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("set", "ads_data_redaction", true);
+    window.gtag("set", "url_passthrough", false);
     window.gtag("js", new Date());
     window.gtag("config", measurementId, {
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
-      cookie_domain: productionHost,
-      cookie_expires: consentLifetime / 1000,
-      page_location: location.origin + location.pathname
+      page_location: location.origin + location.pathname,
+      page_referrer: referrerOrigin()
     });
     const tag = document.createElement("script");
     tag.async = true;
+    tag.referrerPolicy = "origin";
     tag.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
     document.head.append(tag);
   }
 
-  function stopAnalytics(reload = true) {
-    window["ga-disable-" + measurementId] = true;
-    for (const cookie of document.cookie.split(";")) {
-      const name = cookie.trim().split("=")[0];
-      if (name === "_ga" || name.startsWith("_ga_")) {
-        const expired = name + "=; Max-Age=0; Path=/; SameSite=Lax; Secure";
-        document.cookie = expired;
-        document.cookie = expired + "; Domain=" + productionHost;
-      }
-    }
-    // Reload to remove the already-loaded tag after consent is withdrawn.
-    if (started && reload) location.reload();
+  function applyPreference() {
+    const off = !production || browserOptOut || optedOut;
+    window[disableKey] = off;
+    if (!off) startAnalytics();
   }
 
-  const banner = document.createElement("section");
-  banner.className = "analytics-banner";
-  banner.setAttribute("aria-label", "Analytics preferences");
-  const message = document.createElement("p");
-  message.textContent = "Allow Google Analytics cookies to measure visits, approximate location, and referral sources? You can change your choice using Analytics settings below. ";
-  const details = document.createElement("a");
-  details.href = "https://policies.google.com/technologies/partner-sites";
-  details.textContent = "How Google uses data";
-  message.append(details);
-  const buttons = document.createElement("div");
-  buttons.className = "analytics-actions";
+  clearLegacyCookies();
+  applyPreference();
 
-  const settings = document.createElement("button");
-  settings.type = "button";
-  settings.className = "analytics-settings";
-  settings.textContent = "Analytics settings";
-  settings.addEventListener("click", () => {
-    banner.hidden = false;
-    decline.focus();
-  });
-
-  function choose(allowed) {
-    const saved = saveChoice(allowed);
-    banner.hidden = true;
-    if (allowed) startAnalytics();
-    else stopAnalytics(saved);
-    settings.focus();
-  }
-
-  const decline = document.createElement("button");
-  decline.type = "button";
-  decline.textContent = "Decline";
-  decline.addEventListener("click", () => choose(false));
-  const allow = document.createElement("button");
-  allow.type = "button";
-  allow.textContent = "Allow analytics";
-  allow.addEventListener("click", () => choose(true));
-  buttons.append(decline, allow);
-  banner.append(message, buttons);
-  document.body.append(banner);
-  const footer = document.querySelector("footer");
-  (footer || document.body).append(settings);
-
-  const choice = readChoice();
-  banner.hidden = choice !== null;
-  if (choice === true) startAnalytics();
-
-  // Apply preference changes made in another open page of this site.
-  window.addEventListener("storage", (event) => {
-    if (event.key !== storageKey && event.key !== null) return;
-    const updated = readChoice();
-    banner.hidden = updated !== null;
-    if (updated === true) startAnalytics();
-    else stopAnalytics();
+  // Update already-open pages when this browser's saved preference changes.
+  window.addEventListener("storage", event => {
+    if (event.key !== preferenceKey && event.key !== legacyKey && event.key !== null) return;
+    optedOut = readPreference();
+    applyPreference();
   });
 })();
