@@ -17,7 +17,13 @@ p { margin: 0 0 18px; }
 h1, h2, h3, h4 { color: var(--ink); }
 .site-layout { display: grid; grid-template-columns: 220px minmax(0, 690px); gap: 84px; max-width: 1114px; margin: 70px auto 0; padding: 0 40px; }
 .identity { position: sticky; top: 56px; align-self: start; }
-.profile-photo { display: block; width: 170px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; margin-bottom: 20px; }
+.photo-disclosure { position: relative; width: fit-content; margin-bottom: 20px; }
+.photo-trigger { display: block; list-style: none; cursor: pointer; border-radius: 3px; }
+.photo-trigger::-webkit-details-marker { display: none; }
+.photo-trigger::marker { content: ''; }
+.photo-trigger:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.profile-photo { display: block; width: 170px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; margin: 0; }
+.photo-note { position: absolute; top: 100%; left: 0; margin: 3px 0 0; color: var(--muted); font-size: 11px; line-height: 1.2; white-space: nowrap; }
 .profile-details { min-width: 0; }
 .name-disclosure { position: relative; width: fit-content; max-width: 100%; margin-bottom: 16px; }
 .site-name { display: block; color: var(--ink); font: 400 32px/1.2 var(--serif); letter-spacing: -.035em; white-space: nowrap; list-style: none; cursor: pointer; }
@@ -163,6 +169,8 @@ button:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   .site-layout { display: block; max-width: 690px; margin-top: 30px; padding-inline: 24px; }
   .identity { position: static; padding-bottom: 26px; margin-bottom: 32px; border-bottom: 1px solid var(--rule); }
   .profile-heading { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; align-items: center; }
+  .photo-disclosure { margin-bottom: 0; }
+  .photo-note { margin-top: 2px; font-size: 10px; }
   .profile-photo { width: 88px; margin: 0; }
   .name-disclosure { width: 100%; margin-bottom: 8px; }
   .name-note { left: auto; right: 0; }
@@ -197,6 +205,6 @@ button:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 @media print {
   .site-layout { display: block; margin: 0; padding: 0; max-width: none; }
   .identity { position: static; margin-bottom: 25px; }
-  .site-nav, .profile-links, .skip-link, footer, .analytics-banner, .name-note, .location-disclosure { display: none; }
+  .site-nav, .profile-links, .skip-link, footer, .analytics-banner, .name-note, .location-disclosure, .photo-note { display: none; }
   .research-project, .news-list li, .publication-list li { break-inside: avoid; }
 }

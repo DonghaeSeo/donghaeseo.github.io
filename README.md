@@ -22,6 +22,7 @@ Then visit <http://127.0.0.1:8000>.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
+- The portrait toggles a plain caption, “Paris · May 2024,” on click, tap, Enter, or Space. Native details/summary supplies this interaction without JavaScript; the caption sits in the existing space below the photo.
 - `styles.css` and `kaist-theme.css` control appearance with self-hosted STIX Two Text.
 - `themes.js` defines affiliation history and KAIST/POSTECH color themes. Add future affiliations there and keep the HTML fallback consistent across all three pages. Theme selection does not change career facts.
 - Mobile shows the current affiliation first; More opens the vertical history. Desktop shows the full history.
