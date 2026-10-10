@@ -56,6 +56,26 @@
   });
 })();
 
+// A quiet personal link, with native click, touch and keyboard disclosure.
+(() => {
+  const disclosure = document.querySelector('.personal-disclosure');
+  if (!disclosure) return;
+  const trigger = disclosure.querySelector('summary');
+  document.addEventListener('keydown', (event) => {
+    if (!disclosure.open || event.key !== 'Escape') return;
+    if (disclosure.contains(document.activeElement)) {
+      trigger.focus({ preventScroll: true });
+    }
+    disclosure.open = false;
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!disclosure.contains(event.target)) disclosure.open = false;
+  });
+  document.addEventListener('focusin', (event) => {
+    if (!disclosure.contains(event.target)) disclosure.open = false;
+  });
+})();
+
 // Assemble the public address on interaction; this only deters simple scrapers.
 (() => {
   const disclosure = document.querySelector('.email-disclosure');

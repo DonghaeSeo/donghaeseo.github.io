@@ -1,0 +1,52 @@
+Local map assets for the personal homepage
+
+Load in order:
+1. d3.v7.9.0.min.js -> window.d3
+2. topojson-client.v3.1.0.min.js -> window.topojson
+3. land-50m.js -> window.AFFILIATION_LAND (GeoJSON FeatureCollection)
+4. land-110m.js -> window.AFFILIATION_LAND_WORLD (GeoJSON FeatureCollection)
+
+All assets are local classic scripts: no network or file:// fetch required.
+Use d3.geoEqualEarth() for the Equal Earth map and d3.geoOrthographic()
+for a globe. Land at 1:50 million is intended for regional close-ups;
+it is not a street-level campus map.
+Land at 1:110 million is included for faster world/globe rendering.
+
+Pinned upstream sources, checked 2026-10-10:
+https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js
+https://cdn.jsdelivr.net/npm/d3@7.9.0/LICENSE
+https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js
+https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/LICENSE
+https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-50m.json
+https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json
+https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/LICENSE
+
+D3, TopoJSON client, and world-atlas carry their own license files here.
+World-atlas land comes from Natural Earth. Natural Earth data are public
+ domain: https://www.naturalearthdata.com/about/terms-of-use/
+The wrapper retains the original TopoJSON data and decodes it at runtime.
+No country borders or labels are included.
+
+Institution marker coordinates in [longitude, latitude] order:
+KAIST, Daejeon: [127.35698024544656, 36.368281164900715]
+Official directions page map anchor (data-map attribute):
+https://www.kaist.ac.kr/en/html/kaist/01200201.html
+Official address: 291 Daehak-ro, Yuseong-gu, Daejeon.
+
+POSTECH, Pohang: [129.321777, 36.012436]
+Official campus-map script's mapCenter, labeled as POSTECH coordinates:
+https://www.postech.ac.kr/_custom/postech/resource/js/app/campus-map/app.campus-map.js
+Campus map: https://www.postech.ac.kr/eng/about/campus_map.do
+Official address: 77 Cheongam-ro, Nam-gu, Pohang.
+These represent campus map anchors, not a particular department's building.
+
+Visit-marker data and institution-specific official source URLs are stored in
+../../locations-data.js. Official pages establish the campus city/area; the
+rounded visit coordinates are approximate map positions, not numerical
+coordinates quoted from those pages. Cambridge uses West Cambridge broadly,
+without claiming which Cavendish building was visited. Kagoshima uses the
+Korimoto campus area, without claiming a specific conference venue.
+No visit purposes or participation dates are included.
+
+Original land-50m.json SHA-256: 619477ff690c086885e45cb91707d783805561bd75ae8e437b7d4694b0204e0f
+Original land-110m.json SHA-256: ead5f68119c49a9250902e7da303bcb209341bbb8fefe7369a439b48b704658a

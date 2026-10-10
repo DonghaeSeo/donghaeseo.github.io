@@ -7,11 +7,17 @@
   <title>Publications · Donghae Seo</title>
   <link rel="icon" href="data:,">
   <script src="themes.js?v=7"></script>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
   <link rel="stylesheet" href="kaist-theme.css?v=9">
   <script defer src="motion.js"></script>
   <script defer src="analytics.js?v=3"></script>
-  <script defer src="profile.js"></script>
+  <script defer src="profile.js?v=2"></script>
+  <script defer src="assets/map/d3.v7.9.0.min.js"></script>
+  <script defer src="assets/map/topojson-client.v3.1.0.min.js"></script>
+  <script defer src="assets/map/land-50m.js"></script>
+  <script defer src="assets/map/land-110m.js"></script>
+  <script defer src="locations-data.js?v=1"></script>
+  <script defer src="locations.js?v=1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,7 +30,14 @@
             <summary class="site-name" aria-controls="name-note" aria-label="Donghae Seo — Korean name and pronunciation">Donghae Seo</summary>
             <div class="name-note" id="name-note">
               <p class="name-korean" lang="ko">서동해</p>
-              <p class="name-pronunciation">Donghae <span>“dong-heh”</span><br>Seo <span>“suh”</span></p>
+              <p class="name-pronunciation" aria-label="Approximate English pronunciation">Donghae <span>“dong-heh”</span><br>Seo <span>“suh”</span></p>
+              <div class="name-hint">
+                <p>A couple of pronunciation hints:</p>
+                <dl class="name-memory">
+                  <div><dt>hae</dt><dd>“head” without the <em>d</em></dd></div>
+                  <div><dt>Seo</dt><dd>“sun” without the <em>n</em></dd></div>
+                </dl>
+              </div>
             </div>
           </details>
           <details class="affiliation-history" open>
@@ -64,6 +77,23 @@
               </li>
             </ol>
           </details>
+          <details class="location-disclosure">
+            <summary class="location-trigger" aria-controls="location-panel">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6.5h14M5 17.5h14"/></svg>
+              <span>Locations</span>
+            </summary>
+            <div class="location-panel" id="location-panel">
+              <div class="location-heading"><span>Affiliations &amp; visits</span><div class="location-views" aria-label="Map view"><button type="button" data-map-view="map" aria-pressed="true">Map</button><button type="button" data-map-view="globe" aria-pressed="false">Globe</button></div></div>
+              <svg class="location-map" viewBox="0 0 320 180" role="img" aria-label="Affiliations and institutions visited in South Korea, Japan, the United Kingdom, and the United States"></svg>
+              <div class="location-map-tools"><span class="location-map-caption" hidden></span><button class="location-zoom" type="button" aria-pressed="false">Closer look</button></div>
+              <div class="location-legend" aria-label="Filled dots mark affiliations; outlined dots mark visits"><span><i class="legend-affiliation"></i>Affiliations</span><span><i class="legend-visit"></i>Visits</span></div>
+              <label class="location-picker-label" for="location-select">Choose an institution</label>
+              <select class="location-picker" id="location-select" aria-label="Choose an institution">
+                <optgroup label="Affiliations"><option value="kaist">KAIST · Daejeon</option><option value="postech">POSTECH · Pohang</option></optgroup>
+              </select>
+              <div class="location-status" aria-live="polite"><p class="location-name">KAIST</p><p class="location-city">Daejeon, South Korea</p></div>
+            </div>
+          </details>
           <span class="theme-status" role="status" aria-live="polite"></span>
         </div>
       </div>
@@ -83,6 +113,12 @@
         </details>
         <a href="https://scholar.google.com/citations?user=h_EDQb0AAAAJ&amp;hl=en">Google Scholar</a>
         <a href="https://orcid.org/0009-0005-3455-2430">ORCID</a>
+        <details class="personal-disclosure">
+          <summary class="personal-trigger" aria-label="My wife’s homepage" aria-controls="personal-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 4.8a5.2 5.2 0 0 0-7.4 0L12 5.9l-1.1-1.1a5.2 5.2 0 0 0-7.4 7.4L12 20.7l8.5-8.5a5.2 5.2 0 0 0 0-7.4Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="personal-note" id="personal-note"><a href="https://munjungkim.github.io/index.html">Visit my wife’s webpage&nbsp;↗</a></div>
+        </details>
       </div>
     </header>
     <div class="content-column">
@@ -138,6 +174,7 @@
           </ol>
         </section>
       </main>
+
     </div>
   </div>
 </body>
