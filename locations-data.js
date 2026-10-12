@@ -1,4 +1,4 @@
-// Visited institutions confirmed by the user on 2026-10-10.
+// Visited institutions confirmed by the user on 2026-10-10 and 2026-10-11.
 // Visit coordinates are approximate campus-area positions, not exact visited buildings.
 window.AFFILIATION_PLACES = [
   {
@@ -153,6 +153,76 @@ window.AFFILIATION_PLACES = [
     ],
     "kind": "visit",
     "source": "https://www.mit.edu/contact/",
+    "color": "#577f82"
+  },
+  {
+    "id": "caltech",
+    "name": "California Institute of Technology",
+    "short": "Caltech",
+    "city": "Pasadena, California",
+    "country": "United States",
+    "point": [
+      -118.13,
+      34.14
+    ],
+    "kind": "visit",
+    "source": "https://www.caltech.edu/about/visit/directions",
+    "color": "#577f82"
+  },
+  {
+    "id": "berkeley",
+    "name": "University of California, Berkeley",
+    "short": "UC Berkeley",
+    "city": "Berkeley, California",
+    "country": "United States",
+    "point": [
+      -122.26,
+      37.87
+    ],
+    "kind": "visit",
+    "source": "https://visit.berkeley.edu/contact-us/",
+    "color": "#577f82"
+  },
+  {
+    "id": "ohio-state",
+    "name": "The Ohio State University",
+    "short": "Ohio State University",
+    "city": "Columbus, Ohio",
+    "country": "United States",
+    "point": [
+      -83.01,
+      40.00
+    ],
+    "kind": "visit",
+    "source": "https://physics.osu.edu/contact-information",
+    "color": "#577f82"
+  },
+  {
+    "id": "princeton",
+    "name": "Princeton University",
+    "short": "Princeton University",
+    "city": "Princeton, New Jersey",
+    "country": "United States",
+    "point": [
+      -74.65,
+      40.35
+    ],
+    "kind": "visit",
+    "source": "https://www.princeton.edu/meet-princeton/visit-us",
+    "color": "#577f82"
+  },
+  {
+    "id": "harvard",
+    "name": "Harvard University",
+    "short": "Harvard University",
+    "city": "Cambridge, Massachusetts",
+    "country": "United States",
+    "point": [
+      -71.12,
+      42.38
+    ],
+    "kind": "visit",
+    "source": "https://www.harvard.edu/visit/maps-directions/",
     "color": "#577f82"
   }
 ];
