@@ -31,6 +31,7 @@ Then visit <http://127.0.0.1:8000>.
 - The pronunciation note retains “dong-heh” and “suh,” with memory hints for hae (“head” without d) and Seo (“sun” without n). These are approximate English cues.
 - `locations-data.js` lists affiliations and visited institutions. Visits are alphabetized by their displayed English names and show only institution and location. `locations.js` provides the compact Equal Earth map and rotatable globe; map assets and licenses are stored locally in `assets/map/`.
 - On 2026-10-11, the user confirmed visits to Caltech, UC Berkeley, The Ohio State University, Princeton University, and Harvard University, bringing the map to 14 visited institutions. Markers use approximate campus positions. Dates and purposes are omitted.
+- On 2026-10-15, the user confirmed a visit to Stanford University, bringing the map to 15 visited institutions.
 - Update the institutional email in `profile.js` and the `<noscript>` fallback in all three pages when it changes.
 - `analytics.js` starts cookieless Google consent-mode signals on the production hostname without an entry prompt. Storage and advertising consent remain denied; saved refusals and browser privacy signals are respected. Local previews do not load Google Analytics.
 - The public CV is a separate email-free build. Keep its publication entries concise, join authors and journal with a comma, and use full journal names.

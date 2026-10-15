@@ -1,4 +1,4 @@
-// Visited institutions confirmed by the user on 2026-10-10 and 2026-10-11.
+// Visited institutions confirmed by the user on 2026-10-10, 2026-10-11, and 2026-10-15.
 // Visit coordinates are approximate campus-area positions, not exact visited buildings.
 window.AFFILIATION_PLACES = [
   {
@@ -223,6 +223,20 @@ window.AFFILIATION_PLACES = [
     ],
     "kind": "visit",
     "source": "https://www.harvard.edu/visit/maps-directions/",
+    "color": "#577f82"
+  },
+  {
+    "id": "stanford",
+    "name": "Stanford University",
+    "short": "Stanford University",
+    "city": "Stanford, California",
+    "country": "United States",
+    "point": [
+      -122.17,
+      37.43
+    ],
+    "kind": "visit",
+    "source": "https://visit.stanford.edu/",
     "color": "#577f82"
   }
 ];
