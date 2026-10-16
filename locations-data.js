@@ -238,5 +238,89 @@ window.AFFILIATION_PLACES = [
     "kind": "visit",
     "source": "https://visit.stanford.edu/",
     "color": "#577f82"
+  },
+  {
+    "id": "snu",
+    "name": "Seoul National University",
+    "short": "Seoul National University",
+    "city": "Seoul",
+    "country": "South Korea",
+    "point": [
+      126.95,
+      37.46
+    ],
+    "kind": "visit",
+    "source": "https://en.snu.ac.kr/about/campus/gwanak/address",
+    "color": "#577f82"
+  },
+  {
+    "id": "yonsei",
+    "name": "Yonsei University",
+    "short": "Yonsei University",
+    "city": "Seoul",
+    "country": "South Korea",
+    "point": [
+      126.94,
+      37.57
+    ],
+    "kind": "visit",
+    "source": "https://gosc.yonsei.ac.kr/gosc/life/directions01.do",
+    "color": "#577f82"
+  },
+  {
+    "id": "korea-university",
+    "name": "Korea University",
+    "short": "Korea University",
+    "city": "Seoul",
+    "country": "South Korea",
+    "point": [
+      127.03,
+      37.59
+    ],
+    "kind": "visit",
+    "source": "https://www.korea.edu/en/996/subview.do",
+    "color": "#577f82"
+  },
+  {
+    "id": "unist",
+    "name": "Ulsan National Institute of Science and Technology",
+    "short": "UNIST",
+    "city": "Ulsan",
+    "country": "South Korea",
+    "point": [
+      129.19,
+      35.57
+    ],
+    "kind": "visit",
+    "source": "https://www.unist.ac.kr/unist/introduction/location.do",
+    "color": "#577f82"
+  },
+  {
+    "id": "kyung-hee-seoul",
+    "name": "Kyung Hee University (Seoul Campus)",
+    "short": "Kyung Hee University (Seoul Campus)",
+    "city": "Seoul",
+    "country": "South Korea",
+    "point": [
+      127.05,
+      37.60
+    ],
+    "kind": "visit",
+    "source": "https://www.khu.ac.kr/eng/user/contents/view.do?menuNo=300049",
+    "color": "#577f82"
+  },
+  {
+    "id": "oxford",
+    "name": "University of Oxford",
+    "short": "University of Oxford",
+    "city": "Oxford",
+    "country": "United Kingdom",
+    "point": [
+      -1.25,
+      51.75
+    ],
+    "kind": "visit",
+    "source": "https://www.ox.ac.uk/about/visit-us/map",
+    "color": "#577f82"
   }
 ];
