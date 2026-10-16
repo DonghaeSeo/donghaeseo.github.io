@@ -30,17 +30,17 @@ window.AFFILIATION_PLACES = [
     "source": "https://www.postech.ac.kr/eng/about/campus_map.do"
   },
   {
-    "id": "cavendish",
-    "name": "Cavendish Laboratory, University of Cambridge",
-    "short": "Cavendish Laboratory",
+    "id": "cambridge",
+    "name": "University of Cambridge",
+    "short": "University of Cambridge",
     "city": "Cambridge",
     "country": "United Kingdom",
     "point": [
-      0.1,
-      52.21
+      0.12,
+      52.20
     ],
     "kind": "visit",
-    "source": "https://www.hep.phy.cam.ac.uk/where",
+    "source": "https://map.cam.ac.uk/",
     "color": "#577f82"
   },
   {

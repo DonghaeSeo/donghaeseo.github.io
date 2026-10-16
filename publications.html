@@ -7,7 +7,7 @@
   <title>Publications · Donghae Seo</title>
   <link rel="icon" href="data:,">
   <script src="themes.js?v=7"></script>
-  <link rel="stylesheet" href="styles.css?v=16">
+  <link rel="stylesheet" href="styles.css?v=17">
   <link rel="stylesheet" href="kaist-theme.css?v=10">
   <script defer src="motion.js"></script>
   <script defer src="analytics.js?v=3"></script>
@@ -16,8 +16,9 @@
   <script defer src="assets/map/topojson-client.v3.1.0.min.js"></script>
   <script defer src="assets/map/land-50m.js"></script>
   <script defer src="assets/map/land-110m.js"></script>
-  <script defer src="locations-data.js?v=4"></script>
-  <script defer src="locations.js?v=1"></script>
+  <script defer src="locations-data.js?v=5"></script>
+  <script defer src="locations-layout.js?v=1"></script>
+  <script defer src="locations.js?v=2"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -89,14 +90,15 @@
             </summary>
             <div class="location-panel" id="location-panel">
               <div class="location-heading"><span>Affiliations &amp; visits</span><div class="location-views" aria-label="Map view"><button type="button" data-map-view="map" aria-pressed="true">Map</button><button type="button" data-map-view="globe" aria-pressed="false">Globe</button></div></div>
-              <svg class="location-map" viewBox="0 0 320 180" role="img" aria-label="Affiliations and institutions visited in South Korea, Japan, the United Kingdom, and the United States"></svg>
-              <div class="location-map-tools"><span class="location-map-caption" hidden></span><button class="location-zoom" type="button" aria-pressed="false">Closer look</button></div>
+              <svg class="location-map" viewBox="0 0 320 180" role="group" aria-label="Affiliations and institutions visited in South Korea, Japan, the United Kingdom, and the United States"></svg>
+              <div class="location-map-tools"><span class="location-map-caption">Select a dot</span><div class="location-zoom-controls" aria-label="Map zoom"><button class="location-zoom-step location-zoom-out" type="button" aria-label="Zoom out" disabled>−</button><button class="location-zoom" type="button" disabled>World view</button><button class="location-zoom-step location-zoom-in" type="button" aria-label="Zoom in">+</button></div></div>
               <div class="location-legend" aria-label="Filled dots mark affiliations; outlined dots mark visits"><span><i class="legend-affiliation"></i>Affiliations</span><span><i class="legend-visit"></i>Visits</span></div>
               <label class="location-picker-label" for="location-select">Choose an institution</label>
               <select class="location-picker" id="location-select" aria-label="Choose an institution">
                 <optgroup label="Affiliations"><option value="kaist">KAIST · Daejeon</option><option value="postech">POSTECH · Pohang</option></optgroup>
               </select>
               <div class="location-status" aria-live="polite"><p class="location-name">KAIST</p><p class="location-city">Daejeon, South Korea</p></div>
+              <div class="location-cluster" hidden><div class="location-cluster-heading"><span class="location-cluster-title"></span><button class="location-cluster-close" type="button">Collapse</button></div><ul class="location-cluster-list" aria-label="Institutions in this group"></ul></div>
             </div>
           </details>
           <span class="theme-status" role="status" aria-live="polite"></span>

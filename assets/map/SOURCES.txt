@@ -43,8 +43,10 @@ These represent campus map anchors, not a particular department's building.
 Visit-marker data and institution-specific official source URLs are stored in
 ../../locations-data.js. Official pages establish the campus city/area; the
 rounded visit coordinates are approximate map positions, not numerical
-coordinates quoted from those pages. Cambridge uses West Cambridge broadly,
-without claiming which Cavendish building was visited. Kagoshima uses the
+coordinates quoted from those pages. Cambridge uses the central university
+area, without claiming which college or building was visited. The user
+requested university-level naming on 2026-10-15; the official map at
+https://map.cam.ac.uk/ was checked that day. Kagoshima uses the
 Korimoto campus area, without claiming a specific conference venue.
 The 2026-10-15 additions use Gwanak for Seoul National University, Sinchon
 for Yonsei University, the Seoul campus for Korea University, the Ulsan
