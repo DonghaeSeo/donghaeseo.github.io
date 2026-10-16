@@ -322,5 +322,19 @@ window.AFFILIATION_PLACES = [
     "kind": "visit",
     "source": "https://www.ox.ac.uk/about/visit-us/map",
     "color": "#577f82"
+  },
+  {
+    "id": "hokkaido",
+    "name": "Hokkaido University",
+    "short": "Hokkaido University",
+    "city": "Sapporo",
+    "country": "Japan",
+    "point": [
+      141.34,
+      43.07
+    ],
+    "kind": "visit",
+    "source": "https://www.global.hokudai.ac.jp/access/sapporo-campus/",
+    "color": "#577f82"
   }
 ];

@@ -54,6 +54,9 @@ campus for UNIST, and the explicitly requested Seoul Campus for Kyung Hee
 University. Oxford uses the central university area, without identifying
 a particular college or department. Official campus pages were checked
 on 2026-10-15; these markers do not establish which buildings were visited.
+Hokkaido University, added later on 2026-10-15, uses its main Sapporo campus
+area at approximately [141.34, 43.07]. Its official Sapporo campus access
+page is linked in the marker data; no particular building is identified.
 No visit purposes or participation dates are included.
 
 Original land-50m.json SHA-256: 619477ff690c086885e45cb91707d783805561bd75ae8e437b7d4694b0204e0f
