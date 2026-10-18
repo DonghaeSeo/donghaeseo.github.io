@@ -8,7 +8,7 @@
         { title: 'Postdoctoral Researcher', period: 'Sep 2026–present' }
       ],
       image: 'assets/kaist-emblem.gif',
-      colors: { accent: '#01438f', hover: '#002f67', underline: '#a4bbd5', rule: '#dde4ed', soft: '#c3d3e5', wash: '#f2f6fb' }
+      colors: { accent: '#30546c', hover: '#203f52', underline: '#a4b5bb', rule: '#dedbd4', soft: '#c7d0d4', wash: '#eef0ed' }
     },
     {
       id: 'postech', name: 'POSTECH', detail: 'POSTECH, Pohang', current: false,
@@ -18,7 +18,7 @@
         { title: 'BS in Physics', period: 'Mar 2017–Feb 2021' }
       ],
       image: 'assets/postech-emblem.png',
-      colors: { accent: '#a61955', hover: '#78123d', underline: '#d4a4b8', rule: '#eadde2', soft: '#dfbecb', wash: '#fbf3f6' }
+      colors: { accent: '#843f52', hover: '#632d3d', underline: '#bda0a7', rule: '#e2d9d5', soft: '#dbc7ca', wash: '#f3ecea' }
     }
   ];
   const key = 'academic-affiliation-theme-v1';

@@ -18,13 +18,16 @@ Then visit <http://127.0.0.1:8000>.
 ## Update
 
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
+- Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley talk stays in October. Keep distinct research visits and conference/award news separate.
+- Combine awards received in the same month into one news item, retaining each award's name and awarding institution. The two February 2026 POSTECH paper awards share one item.
 - Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
-- The portrait toggles a plain caption, “Paris · May 2024,” on click, tap, Enter, or Space. Native details/summary supplies this interaction without JavaScript; the caption sits in the existing space below the photo.
-- `styles.css` and `kaist-theme.css` control appearance with self-hosted STIX Two Text.
-- `themes.js` defines affiliation history and KAIST/POSTECH color themes. Add future affiliations there and keep the HTML fallback consistent across all three pages. Theme selection does not change career facts.
+- The portrait toggles a plain caption, “San Francisco · 2026,” on click, tap, Enter, or Space. Native details/summary supplies this interaction without JavaScript; the caption sits below the photo and wraps onto two lines on narrow screens. The original photograph is framed in a 4:5 crop with the face near the center and more of the city above it visible.
+- The homepage begins directly with News; research descriptions stay in the Research section.
+- `styles.css` and `kaist-theme.css` control appearance with self-hosted STIX Two Text. Soft sand and affiliation-colored gradients at the top edges fade into the plain warm background. The background is static CSS and prints white.
+- `themes.js` defines affiliation history and KAIST/POSTECH color themes. The interface uses subdued blue and burgundy on a warm off-white background; the official emblems retain their original colors. Add future affiliations there and keep the HTML fallback consistent across all three pages. Theme selection does not change career facts.
 - Mobile shows the current affiliation first; More opens the vertical history. Desktop shows the full history.
 - `motion.js` controls the restrained entrance effect; theme transitions honor reduced-motion preferences.
 - `profile.js` controls the name pronunciation note and email disclosure. The heart after ORCID is a native link that goes directly to the wife’s homepage on click or Enter, without a disclosure. It follows the vertical desktop or horizontal mobile profile-links layout and retains a 44 px target.
@@ -42,3 +45,7 @@ Then visit <http://127.0.0.1:8000>.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.
+
+## Color references
+
+The warm neutral base and restrained accents draw on [Adobe’s neutral-first palette guidance](https://www.adobe.com/express/learn/blog/3-easy-steps-to-picking-your-brand-colors) and [warm/cool complementary colors](https://www.adobe.com/uk/creativecloud/design/discover/complementary-colors.html). The blue and burgundy interface shades are designed adaptations, not official university specifications. Original emblems follow [KAIST identity](https://www.kaist.ac.kr/en/html/kaist/011901.html) and [POSTECH symbols](https://postech.ac.kr/eng/about/symbol.do).

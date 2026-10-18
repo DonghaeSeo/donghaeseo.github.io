@@ -1,22 +1,21 @@
 /* STIX Two Text: official STIX v2.0.2, SIL OFL 1.1.
-   KAIST accent sampled from official wordmark; POSTECH red from official UI. */
+   University emblems retain their official colors. Site accents are muted
+   blue/burgundy adaptations, paired with warm neutral surfaces for the portrait. */
 @font-face { font-family: 'STIX Two Text'; src: url('assets/fonts/STIX2Text-Regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
 @font-face { font-family: 'STIX Two Text'; src: url('assets/fonts/STIX2Text-Bold.woff2') format('woff2'); font-style: normal; font-weight: 600 900; font-display: swap; }
 @font-face { font-family: 'STIX Two Text'; src: url('assets/fonts/STIX2Text-Italic.woff2') format('woff2'); font-style: italic; font-weight: 400; font-display: swap; }
 @font-face { font-family: 'STIX Two Text'; src: url('assets/fonts/STIX2Text-BoldItalic.woff2') format('woff2'); font-style: italic; font-weight: 600 900; font-display: swap; }
 :root {
-  --ink: #253244; --muted: #626c78;
-  --theme-accent: #01438f; --theme-hover: #002f67; --theme-underline: #a4bbd5;
-  --theme-rule: #dde4ed; --theme-soft: #c3d3e5; --theme-wash: #f2f6fb;
+  --ink: #303536; --muted: #6b6965;
+  --theme-accent: #30546c; --theme-hover: #203f52; --theme-underline: #a4b5bb;
+  --theme-rule: #dedbd4; --theme-soft: #c7d0d4; --theme-wash: #eef0ed;
   --link: var(--theme-accent); --rule: var(--theme-rule);
 }
-body::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: var(--theme-accent); }
 a { text-decoration-color: var(--theme-underline); }
 a:hover { color: var(--theme-hover); transition: color 180ms ease, text-decoration-color 180ms ease; }
 .site-name, h1, h2 { color: var(--theme-accent); }
 .site-name { letter-spacing: -.025em; }
 .site-name:hover { color: var(--theme-hover); transition: color 180ms ease; }
-.lead { font-size: 24px; line-height: 1.52; letter-spacing: 0; }
 .news-list p { font-size: 16px; line-height: 1.6; }
 .research-project h3 { font: 600 17px/1.4 var(--serif); margin-bottom: 7px; }
 .research-project p { font-size: 16px; line-height: 1.65; }
@@ -30,7 +29,7 @@ a:hover { color: var(--theme-hover); transition: color 180ms ease, text-decorati
 .affiliations li:not(:last-child)::before { content: ''; position: absolute; top: 25px; left: 21px; width: 1px; height: calc(100% + var(--affiliation-gap)); background: var(--theme-soft); }
 .affiliation-choice { position: relative; display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: start; gap: 11px; width: 100%; padding: 4px 0; border: 0; background: none; color: var(--muted); text-align: left; font: 13px/1.45 var(--serif); cursor: pointer; }
 .affiliation-choice:hover, .affiliation-choice[aria-pressed='true'] { color: var(--theme-accent); }
-.affiliation-badge { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--theme-rule); background: #fff; box-shadow: 0 0 0 3px #fff; }
+.affiliation-badge { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--theme-rule); background: #fff; box-shadow: 0 0 0 3px var(--paper); }
 .affiliation-emblem { display: block; width: 34px; height: 34px; object-fit: contain; }
 .affiliation-choice[aria-pressed='true'] .affiliation-badge { border-color: var(--theme-accent); box-shadow: 0 0 0 3px var(--theme-wash); }
 .affiliation-label { display: flex; flex-direction: column; gap: 3px; }
@@ -56,7 +55,7 @@ a:hover { color: var(--theme-hover); transition: color 180ms ease, text-decorati
 /* Animate painted colors rather than discrete custom properties. Keeping this
    click-enabled avoids transitions while the initial stylesheets load. */
 .theme-transitions :is(a, h1, h2, .site-name, .affiliation-choice, .affiliation-badge, .affiliation-more, .affiliation-current-school, .profile-links, .identity, .section-heading, .research-papers, .research-project, .name-note, .email-note),
-.theme-transitions body::before, .theme-transitions .section-heading::after, .theme-transitions .affiliations li::before {
+.theme-transitions .section-heading::after, .theme-transitions .affiliations li::before {
   transition: color 480ms ease, background-color 480ms ease, border-color 480ms ease, text-decoration-color 480ms ease, box-shadow 480ms ease;
 }
 .theme-transitions .site-nav a::after { transition: background-color 480ms ease, transform 180ms ease; }
@@ -95,11 +94,10 @@ a:hover { color: var(--theme-hover); transition: color 180ms ease, text-decorati
   .affiliation-period { font-size: 10px; }
   .content-column { padding-bottom: 30px; }
   .site-nav { margin-top: 16px; }
-  .lead { font-size: 22px; line-height: 1.5; }
   .research-papers a { font-size: 15px; }
 }
 @keyframes affiliation-reveal { from { opacity: .5; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-@media print { body::before, .theme-status { display: none; } }
+@media print { .theme-status { display: none; } }
