@@ -46,6 +46,11 @@ Then visit <http://127.0.0.1:8000>.
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.
 
+The Google tag initializer is placed immediately after `<head>` on all three
+pages. `analytics.js` loads Google's asynchronous tag and configures
+`G-DH060W1ZBT` once, using the measurement preferences described above. Do not
+add a second standalone Google tag snippet alongside this initializer.
+
 ## Color references
 
 The warm neutral base and restrained accents draw on [Adobe’s neutral-first palette guidance](https://www.adobe.com/express/learn/blog/3-easy-steps-to-picking-your-brand-colors) and [warm/cool complementary colors](https://www.adobe.com/uk/creativecloud/design/discover/complementary-colors.html). The blue and burgundy interface shades are designed adaptations, not official university specifications. Original emblems follow [KAIST identity](https://www.kaist.ac.kr/en/html/kaist/011901.html) and [POSTECH symbols](https://postech.ac.kr/eng/about/symbol.do).
