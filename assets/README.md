@@ -12,7 +12,9 @@ STIX Two Text WOFF2 files come from the official STIX v2.0.2 archive:
 https://github.com/stipub/stixfonts/tree/master/archive/STIXv2.0.2/WOFF2
 The SIL Open Font License is included at `fonts/OFL.txt`.
 
-The current portrait is the owner's second San Francisco photo from 2026,
-chosen for its more relaxed expression.
-Its JPEG image data is unchanged; the website frames it using CSS. The web
-copy retains only the EXIF orientation needed for correct display.
+The current portrait is the square crop of the owner's first San Francisco
+photo from 2026, showing a front-facing pose. On October 18, 2026, the owner
+selected candidate 2 from the Google Scholar profile crops for the website.
+The 1600 × 1600 PNG is copied unchanged from `02-sf-front-close.png` in the
+workspace's `Profile Photos/2026-10-18-google-scholar/` folder. It is an original
+photo crop without AI retouching. The website displays its full square frame.
