@@ -1,8 +1,8 @@
 (() => {
   "use strict";
 
-  // All storage/advertising consent stays denied. This uses
-  // Google's cookieless consent-mode signals, not ordinary cookie-based GA4.
+  // Basic GA4 measurement with analytics cookies, as selected by the owner.
+  // Advertising remains disabled. Saved refusals and privacy signals win.
   // https://developers.google.com/tag-platform/security/guides/consent
   if (window.__visitMeasurementLoaded) return;
   window.__visitMeasurementLoaded = true;
@@ -27,8 +27,7 @@
   let started = false;
   let optedOut = readPreference();
 
-  // The v2 preference only controls cookieless measurement. It never grants
-  // cookie consent, including when a visitor previously allowed analytics.
+  // Preserve refusals from either previous analytics implementation.
   function readPreference() {
     try {
       const saved = JSON.parse(localStorage.getItem(preferenceKey));
@@ -43,7 +42,7 @@
     }
   }
 
-  function clearLegacyCookies() {
+  function clearAnalyticsCookies() {
     if (!production) return;
     try {
       for (const cookie of document.cookie.split(";")) {
@@ -66,7 +65,7 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("consent", "default", {
-      analytics_storage: "denied",
+      analytics_storage: "granted",
       ad_storage: "denied",
       ad_user_data: "denied",
       ad_personalization: "denied"
@@ -92,11 +91,17 @@
 
   function applyPreference() {
     const off = !production || browserOptOut || optedOut;
+    const changed = window[disableKey] !== off;
     window[disableKey] = off;
-    if (!off) startAnalytics();
+    if (started && changed) {
+      window.gtag("consent", "update", {
+        analytics_storage: off ? "denied" : "granted"
+      });
+    }
+    if (off) clearAnalyticsCookies();
+    else startAnalytics();
   }
 
-  clearLegacyCookies();
   applyPreference();
 
   // Update already-open pages when this browser's saved preference changes.
