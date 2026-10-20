@@ -21,6 +21,7 @@ Then visit <http://127.0.0.1:8000>.
 - Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State talks share another. Keep distinct research visits and conference/award news separate.
 - Combine awards received in the same month into one news item, retaining each award's name and awarding institution. The two February 2026 POSTECH paper awards share one item.
 - Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
+- On 2026-10-20, added arXiv:2610.24633 to News and Preprints. The owner requested a brief, understated participation announcement. Use “A study I contributed to…” without highlighting the result or claiming a specific individual contribution.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
@@ -43,6 +44,8 @@ Then visit <http://127.0.0.1:8000>.
 - Update the institutional email in `profile.js` and the `<noscript>` fallback in all three pages when it changes.
 - `analytics.js` uses basic GA4 measurement with analytics cookies for Home, News, and Publications without an entry prompt, as selected by the owner on October 18, 2026. It uses fixed public page paths/titles and an empty referrer, excluding URL queries and fragments. Advertising consent and Google Signals remain disabled; saved refusals and browser privacy signals are respected. GA cookies persist between measured visits and are cleared when measurement is disabled. Local previews and unrecognized paths do not load Google Analytics. Keep Enhanced Measurement disabled in GA Admin. Granular location/device collection is enabled in all regions, as explicitly requested by the owner on October 18, 2026, to restore city-level reporting. No custom interaction events or site-defined visitor identifiers are added; GA's own cookie identifiers and automatic session/engagement events apply.
 - The public CV is a separate email-free build. Keep its publication entries concise, join authors and journal with a comma, and use full journal names.
+- On 2026-10-20, rebuilt the public CV with arXiv:2610.24633 as preprint [9], matching the updated canonical CV in `../Job Application/CV/main.tex`. The public source and validation record are in `../Job Application/CV/build/kagome_preprint_2026_10_20/`. Both PDFs remain two pages; all pages were visually checked.
+- Later on 2026-10-20, added the October 19 OSU Quantum Matter Seminar to both CVs as talk [9], using the official advertised title “Wavefunctions for Anyon Superconductors.” The current public source and validation record are in `../Job Application/CV/build/osu_seminar_2026_10_20/`. Both PDFs remain two pages and retain the new kagome preprint.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.
