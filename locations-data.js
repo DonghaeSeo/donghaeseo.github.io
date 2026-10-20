@@ -44,9 +44,9 @@ window.AFFILIATION_PLACES = [
     "color": "#577f82"
   },
   {
-    "id": "yitp",
-    "name": "Yukawa Institute for Theoretical Physics",
-    "short": "Yukawa Institute",
+    "id": "kyoto",
+    "name": "Kyoto University",
+    "short": "Kyoto University",
     "city": "Kyoto",
     "country": "Japan",
     "point": [
