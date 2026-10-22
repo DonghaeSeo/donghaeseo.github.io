@@ -18,7 +18,7 @@ Then visit <http://127.0.0.1:8000>.
 ## Update
 
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
-- Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State talks share another. Keep distinct research visits and conference/award news separate.
+- Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State/Princeton talks share another. Keep distinct research visits and conference/award news separate.
 - Combine awards received in the same month into one news item, retaining each award's name and awarding institution. The two February 2026 POSTECH paper awards share one item.
 - Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
 - On 2026-10-20, added arXiv:2610.24633 to News and Preprints. The owner requested a brief, understated participation announcement. Use “A study I contributed to…” without highlighting the result or claiming a specific individual contribution.
@@ -46,6 +46,8 @@ Then visit <http://127.0.0.1:8000>.
 - The public CV is a separate email-free build. Keep its publication entries concise, join authors and journal with a comma, and use full journal names.
 - On 2026-10-20, rebuilt the public CV with arXiv:2610.24633 as preprint [9], matching the updated canonical CV in `../Job Application/CV/main.tex`. The public source and validation record are in `../Job Application/CV/build/kagome_preprint_2026_10_20/`. Both PDFs remain two pages; all pages were visually checked.
 - Later on 2026-10-20, added the October 19 OSU Quantum Matter Seminar to both CVs as talk [9], using the official advertised title “Wavefunctions for Anyon Superconductors.” The current public source and validation record are in `../Job Application/CV/build/osu_seminar_2026_10_20/`. Both PDFs remain two pages and retain the new kagome preprint.
+- On 2026-10-21, the owner confirmed his Princeton talk and clarified that the actual OSU talk used the same title as Princeton and Berkeley: “A Unified Approach to Anyon Superconductivity and Quantum Hall Hierarchy.” Princeton is included in the existing October news item on both Home and News. Both CVs group these three talks under that title, retaining each venue and month. The identical-title July MIT/Yale talks are also grouped. This delivered-title confirmation supersedes the advertised OSU title in the current CV; the October 20 build remains a historical record.
+- The latest public CV source and validation record are in `../Job Application/CV/build/princeton_talk_2026_10_21/`. Both CVs remain two pages with the original typography and spacing. All four PDF pages were visually checked, and both builds are warning-free.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.
