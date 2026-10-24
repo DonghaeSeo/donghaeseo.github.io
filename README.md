@@ -7,18 +7,18 @@ No build step or package installation is required.
 
 ## Preview
 
-Open `index.html`, or run:
+Open `index.html` in VS Code. For its integrated browser preview, run:
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Then visit <http://127.0.0.1:8000>.
+Then open <http://127.0.0.1:8000> in VS Code's integrated browser. Use VS Code for HTML review, as requested by the owner on October 20, 2026.
 
 ## Update
 
 - Edit `news.html` for the full archive and copy selected entries to `index.html`.
-- Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State/Princeton talks share another. Keep distinct research visits and conference/award news separate.
+- Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State/Princeton/Harvard talks share another. Keep distinct research visits and conference/award news separate.
 - Combine awards received in the same month into one news item, retaining each award's name and awarding institution. The two February 2026 POSTECH paper awards share one item.
 - Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
 - On 2026-10-20, added arXiv:2610.24633 to News and Preprints. The owner requested a brief, understated participation announcement. Use “A study I contributed to…” without highlighting the result or claiming a specific individual contribution.
@@ -47,7 +47,9 @@ Then visit <http://127.0.0.1:8000>.
 - On 2026-10-20, rebuilt the public CV with arXiv:2610.24633 as preprint [9], matching the updated canonical CV in `../Job Application/CV/main.tex`. The public source and validation record are in `../Job Application/CV/build/kagome_preprint_2026_10_20/`. Both PDFs remain two pages; all pages were visually checked.
 - Later on 2026-10-20, added the October 19 OSU Quantum Matter Seminar to both CVs as talk [9], using the official advertised title “Wavefunctions for Anyon Superconductors.” The current public source and validation record are in `../Job Application/CV/build/osu_seminar_2026_10_20/`. Both PDFs remain two pages and retain the new kagome preprint.
 - On 2026-10-21, the owner confirmed his Princeton talk and clarified that the actual OSU talk used the same title as Princeton and Berkeley: “A Unified Approach to Anyon Superconductivity and Quantum Hall Hierarchy.” Princeton is included in the existing October news item on both Home and News. Both CVs group these three talks under that title, retaining each venue and month. The identical-title July MIT/Yale talks are also grouped. This delivered-title confirmation supersedes the advertised OSU title in the current CV; the October 20 build remains a historical record.
-- The latest public CV source and validation record are in `../Job Application/CV/build/princeton_talk_2026_10_21/`. Both CVs remain two pages with the original typography and spacing. All four PDF pages were visually checked, and both builds are warning-free.
+- The October 21 public CV source and validation record are preserved in `../Job Application/CV/build/princeton_talk_2026_10_21/`. Both CVs retained two pages with the original typography and spacing. All four PDF pages were visually checked, and both builds were warning-free.
+- On 2026-10-24, the owner confirmed completing his October 23 Harvard talk and the October talk schedule. Home and News group Harvard with Berkeley, Ohio State, and Princeton in the first October news item. Both CVs retain one shared presentation title and separate venue/month rows.
+- The latest public CV source and validation record are in `../Job Application/CV/build/harvard_talk_2026_10_24/`. Both CVs remain two pages with unchanged typography and spacing. All four PDF pages were visually checked, and both builds are warning-free.
 
 Publish changes to the `main` branch. GitHub Pages serves the repository root.
 Preview changes before publishing, including at a narrow screen width.
