@@ -21,7 +21,7 @@ Then open <http://127.0.0.1:8000> in VS Code's integrated browser. Use VS Code f
 - Keep news in reverse chronological order. Group university talks on the same topic only within the same month, and explicitly say that they were talks. The July 2026 MIT/Yale talks share one item; the October 2026 Berkeley/Ohio State/Princeton/Harvard talks share another. Keep distinct research visits and conference/award news separate.
 - Combine awards received in the same month into one news item, retaining each award's name and awarding institution. The two February 2026 POSTECH paper awards share one item.
 - Keep preprint announcements linked to arXiv, even after acceptance or publication. Acceptance and publication news use the DOI when available.
-- On 2026-10-20, added arXiv:2610.24633 to News and Preprints. The owner requested a brief, understated participation announcement. Use “A study I contributed to…” without highlighting the result or claiming a specific individual contribution.
+- On 2026-10-20, added arXiv:2610.24633 to News and Preprints. On 2026-11-05, the owner requested softer wording: “I participated in a study on …, now on arXiv.” Keep this a brief participation announcement without highlighting the result or claiming a specific individual contribution.
 - Edit `publications.html` and the homepage's related papers when a paper changes.
 - Link accepted and published papers to their DOI when available; omit their arXiv numbers from the website's paper lists. Keep arXiv numbers for preprints.
 - Keep the profile markup consistent across all three pages.
