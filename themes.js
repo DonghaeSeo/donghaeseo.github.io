@@ -2,7 +2,7 @@
 (() => {
   const affiliations = [
     {
-      id: 'kaist', name: 'KAIST', detail: 'KAIST, Daejeon', current: true,
+      id: 'kaist', name: 'KAIST', detail: 'KAIST', current: true,
       unit: 'Natural Science Research Institute',
       positions: [
         { title: 'Postdoctoral Researcher', period: 'Sep 2026–present' }
@@ -11,7 +11,7 @@
       colors: { accent: '#30546c', hover: '#203f52', underline: '#a4b5bb', rule: '#dedbd4', soft: '#c7d0d4', wash: '#eef0ed' }
     },
     {
-      id: 'postech', name: 'POSTECH', detail: 'POSTECH, Pohang', current: false,
+      id: 'postech', name: 'POSTECH', detail: 'POSTECH', current: false,
       unit: 'Department of Physics',
       positions: [
         { title: 'PhD in Physics', period: 'Mar 2021–Aug 2026' },

@@ -29,7 +29,7 @@ Then open <http://127.0.0.1:8000> in VS Code's integrated browser. Use VS Code f
 - The homepage begins directly with News; research descriptions stay in the Research section.
 - `styles.css` and `kaist-theme.css` control appearance with self-hosted STIX Two Text. Soft sand and affiliation-colored gradients at the top edges fade into the plain warm background. The background is static CSS and prints white.
 - `themes.js` defines affiliation history and KAIST/POSTECH color themes. The interface uses subdued blue and burgundy on a warm off-white background; the official emblems retain their original colors. Add future affiliations there and keep the HTML fallback consistent across all three pages. Theme selection does not change career facts.
-- Mobile shows the current affiliation first; More opens the vertical history. Desktop shows the full history.
+- Mobile shows the current affiliation first; More opens the vertical history. Desktop shows the full history. Profile affiliation labels show school names only, without cities, as requested on 2026-11-05.
 - `motion.js` controls the restrained entrance effect; theme transitions honor reduced-motion preferences.
 - `profile.js` controls the name pronunciation note and email disclosure. The heart after ORCID is a native link that goes directly to the wife’s homepage on click or Enter, without a disclosure. It follows the vertical desktop or horizontal mobile profile-links layout and retains a 44 px target.
 - The pronunciation note retains “dong-heh” and “suh,” with memory hints for hae (“head” without d) and Seo (“sun” without n). These are approximate English cues.
