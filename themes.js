@@ -41,22 +41,8 @@
     const history = region.closest('.affiliation-history');
     if (history) {
       const summary = history.querySelector('.affiliation-summary');
-      summary.querySelector('img').src = current.image;
       summary.querySelector('.affiliation-current-school').textContent = current.detail;
       summary.querySelector('.affiliation-current-title').textContent = current.positions[0].title;
-      const mobile = window.matchMedia('(max-width: 760px)');
-      let mobileExpanded = false;
-      const syncHistory = () => {
-        const open = !mobile.matches || mobileExpanded;
-        if (!open && region.contains(document.activeElement)) summary.focus({ preventScroll: true });
-        history.open = open;
-      };
-      history.addEventListener('toggle', () => {
-        if (mobile.matches) mobileExpanded = history.open;
-        else if (!history.open) history.open = true;
-      });
-      mobile.addEventListener('change', syncHistory);
-      syncHistory();
     }
     const buttons = [];
     const update = () => {
